@@ -1,0 +1,88 @@
+@keyframes rotacija {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes krug {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes animacija {
+    0% {
+        background-color: #201e42;
+    }
+    75% {
+        background-color: #1d1336;
+    }
+    90% {
+        background-color: #140e2c;
+    }
+ 
+}
+
+
+.circle {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    z-index: 5;
+    background-color: #050210;
+    animation-name: krug, animacija;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0.8;
+}
+
+#r2 {
+    animation-delay: 1.5s;
+    opacity: 0.8;
+}
+
+.container {
+    width: 700px;
+    height: 700px;
+    background-color: #050210;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.c1 {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    animation: rotacija 2s infinite linear
+}
+
+.c1::after { 
+    content:'';
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+    border-radius: 50%;
+    background: #050210;
+} 
+
+
+.blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    border-radius: 50%;
+    filter: blur(100px);
+}
